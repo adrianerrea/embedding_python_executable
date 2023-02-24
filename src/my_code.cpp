@@ -16,7 +16,6 @@ bool my_code::initialize(const std::string &configDir){
     string import_variable = "import sys;sys.path.append('"+configDir+"')";
     const std::filesystem::path configDirPath(configDir);
     std::filesystem::path python_home = configDirPath / ".." / "my_python";
-    //std::filesystem::path python_home = "/home/adrian/anaconda3/envs/medium_cplus/";
 
     Py_SetPythonHome(Py_DecodeLocale(python_home.c_str(),NULL));
     Py_Initialize(); // initialize the Python interpreter
